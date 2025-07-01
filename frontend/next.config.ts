@@ -1,9 +1,7 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  experimental: {
-    appDir: "src/app", // 👈 tells Next where your App Router folder is
-  },
-};
+// next.config.ts
+const nextConfig = {};
 
 export default nextConfig;
+

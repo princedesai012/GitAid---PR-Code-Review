@@ -10,7 +10,7 @@ export default async function Home() {
     <main className="flex min-h-screen flex-col items-center justify-center">
       <AuthButton session={session} />
       {/* 👇 Mounts only if session is active */}
-      <JwtFetcher />
+{/*       <JwtFetcher /> */}
       {/* {session && <RepoList />} */}
     </main>
   );

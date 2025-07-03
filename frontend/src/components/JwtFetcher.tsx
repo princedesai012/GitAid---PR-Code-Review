@@ -11,7 +11,7 @@ export function JwtFetcher() {
     const getJwt = async () => {
       if (status === "authenticated" && session?.user?.id) {
         try {
-          const res = await fetch("http://localhost:8000/api/token", {
+          const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/token`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -23,7 +23,7 @@ export function JwtFetcher() {
 
           const data = await res.json();
           setToken(data.token);
-          localStorage.setItem("jwtTo`ken", data.token); // optional
+          localStorage.setItem("jwtToken", data.token); // ✅ fixed key
         } catch (error) {
           console.error("Failed to get JWT:", error);
         }

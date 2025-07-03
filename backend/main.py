@@ -49,7 +49,7 @@ async def get_current_user(token: str = Depends(oauth2_scheme)):
 
 
 
-@app.post("/")
+@app.get("/")
 async def root():
     return {"message": "Welcome to GitAid API"}
 

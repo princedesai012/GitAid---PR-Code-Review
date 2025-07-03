@@ -71,7 +71,7 @@ from fastapi import Body
 class UserAuthRequest(BaseModel):
     github_user_id: str
 
-@app.get("/api/token")
+@app.post("/api/token")
 async def generate_token(data: UserAuthRequest):
     to_encode = {"sub": data.github_user_id}
     expire = datetime.utcnow() + timedelta(days=7)
